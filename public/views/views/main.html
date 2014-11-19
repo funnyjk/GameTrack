@@ -1,0 +1,16 @@
+<section id="myAffix" class="affix">
+	<div class="row">
+		<h3>{{header}}</h3>
+		<div class="form-group">
+			<button class="btn btn-info" ui-sref="matches.list">Matches</button>
+		</div>
+		Players
+		<select class="form-control" ng-change="changeView('main.players')" ng-model="player" ng-options="player.name for player in players"></select>
+		Matches
+		<div class="form-group">
+			<select class="form-control" ng-change="changeView('matches.match',match)"ng-model="match" ng-options="match.name for match in matches"></select>
+		</div>
+		Games
+		<select class="form-control" ng-change="changeView('main.games')" ng-model="game" ng-options="game.name for game in games"></select>
+	</div>
+</section>

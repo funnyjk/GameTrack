@@ -1,0 +1,10 @@
+<section id="main">
+	<h3>{{header}}</h3>
+		Players
+		<select class="form-control" ng-change="changeView('main.players')" ng-model="player" ng-options="player.name for player in players"></select>
+		Matches
+		<select class="form-control" ng-change="changeView('main.matches')" ng-model="match" ng-options="match.name for match in matches"></select>
+		Games
+		<select class="form-control" ng-change="changeView('main.games')" ng-model="game" ng-options="game.name for game in games"></select>
+	<div ui-view></div>
+</section>

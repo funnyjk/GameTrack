@@ -1,0 +1,13 @@
+<section id="player">
+	<h2>{{player.name}}</h2>
+	<div class="matchBox col-sm-3" ng-repeat="score in player.scores">
+		<h2>{{score._match.name}}</h2>
+		<h4>{{score._match._game.name}}</h4>
+		<ul class="list-unstyled">
+			<li>Wins: {{score.wins}}</li>
+			<li>Loses: {{score.loses}}</li>
+			<li>Ties: {{score.ties}}</li>
+			<li>Score: {{score.score}}</li>
+		</ul>
+	</div>
+</section>

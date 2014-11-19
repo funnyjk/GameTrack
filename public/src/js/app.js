@@ -1,0 +1,1 @@
+angular.module('myApp', ['ui.router', 'uiRout','ngResource', 'MainCtl', 'PlyrCtl', 'GameCtl', 'MatchCtl', 'ScoreCtl', 'PlayerSrv', 'GameSrv', 'MatchSrv', 'ScoreSrv']);

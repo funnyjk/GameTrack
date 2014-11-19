@@ -1,0 +1,17 @@
+<section id="game" ng-controller="gameController">
+	<h2>{{game.name}}</h2>
+	<div ng-repeat="match in game.matches| orderBy:order">
+		<h3>{{match.name}}</h3>
+		<div class="row">
+		<div ng-repeat="score in match.scores">
+			<ul class="list-unstyled col-sm-2">
+				<h4>{{score._player.name}}</h4>
+				<li>Wins: {{score.wins}}</li>
+				<li>Loses: {{score.loses}}</li>
+				<li>Ties: {{score.ties}}</li>
+				<li>Score: {{score.score}}</li>
+			</ul>
+			</div>
+		</div>
+	</div>
+</section>

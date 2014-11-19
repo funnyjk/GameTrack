@@ -1,0 +1,23 @@
+<button class="btn btn-warning" ui-sref='^.list'>Matches</button>
+<section>
+	<div class="row">
+		<div class="matchBox well col-lg-3 col-md-4 col-sm-6">
+			<h3>{{match.name}}</h3>
+			<h4>{{match._game.name}}</h4>
+			<h4>{{match.scores.length}} Player(s)</h4>
+			<div ui-view></div>
+			<button class="btn btn-primary" ng-click="scoreUpdate(match)">Update</button>
+			<button class="btn btn-primary" ui-sref=".player-new">Add Player</button>
+		</div>
+		<div class="col-lg-9 col-md-8 col-sm-6">
+			<ul ng-repeat="score in match.scores" class="list-unstyled col-lg-3 col-md-4 col-sm-6">
+				<h4>Player: {{score._player.name}}</h4>
+				<li>Wins: {{score.wins}}<button class="btn" ng-click="score.wins = score.wins + 1">+1</button><button class="btn" ng-click="score.wins = score.wins - 1">-1</button></li>
+				<li>Loses: {{score.loses}}</li>
+				<li>Ties: {{score.ties}}</li>
+				<li>Score: {{score.score}}</li>
+				<li><a ng-click="deleteScore(score)"><i class="btn fa fa-trash"></i></a></li>
+			</ul>
+		</div>
+	</div>
+</section>

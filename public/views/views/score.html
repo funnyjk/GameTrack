@@ -1,0 +1,27 @@
+<section id="score" ng-controller="scoreController">
+	<h3>{{header}}</h3>
+	<div>
+		<select ng-model="smatch" ng-options="match.name for match in matches" class="form-control"></select>
+		<select ng-model="splayer" ng-options="player.name for player in players" class="form-control"></select>
+		<button ng-click="addScore()" class="form-control">Create</button>
+		<button ng-click="updateScore()" class="form-control">Update</button>
+	</div>
+	<h3>Scores</h3>
+	<input ng-model="scoreFilter._player.name">
+	<div class="row">
+		<div class="col-sm-6" ng-repeat="score in scores | filter:scoreFilter:strict | orderBy:order" ng-click="findScore(score)">
+			<strong>Match:</strong>{{score._match.name}}<br>
+			<strong>Player:</strong>{{score._player.name}}<br>
+<!-- 			<button ng-click="findScore(score)">Select</button>
+			<button ng-click="deleteScore(score)">delete</button> -->
+		</div>
+	</div>
+	<ul class="list-unstyled">
+		<h2>{{score._match.name}}</h2>
+		<h3>{{score._player.name}}</h3>
+		<li>Wins: {{score.wins}} <button class="btn" ng-click="score.wins = score.wins + 1">+1</button><button class="btn" ng-click="score.wins = score.wins - 1">-1</button></li>
+		<li>Loses: {{score.loses}} <button class="btn" ng-click="score.loses = score.loses + 1">+1</button><button class="btn" ng-click="score.loses = score.loses - 1">-1</button></li>
+		<li>Ties: {{score.ties}} <button class="btn" ng-click="score.ties = score.ties + 1">+1</button><button class="btn" ng-click="score.ties = score.ties - 1">-1</button></li>
+		<li>Score: {{score.score}}</li>
+	</ul>
+</section>

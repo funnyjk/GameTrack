@@ -1,0 +1,4 @@
+<section id="new-match-player">
+	<select class="form-control" ng-model="player" ng-options="player.name for player in players"></select>
+	<button ng-click="addScore(match._id, player._id)" class="form-control">Create</button>
+</section>
